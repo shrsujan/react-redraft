@@ -1,0 +1,44 @@
+{
+  "name": "react-redraft",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "history": "^4.7.2",
+    "loadash": "^1.0.0",
+    "noty": "^3.2.0-beta",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "recompose": "^0.26.0"
+  },
+  "scripts": {
+    "build": "run-s clean build-react",
+    "build-react": "react-scripts build",
+    "clean": "rimraf build/",
+    "eject": "react-scripts eject",
+    "format": "prettier --no-editorconfig --write --single-quote --print-width=120 --tab-width=2 \"src/**/*.{js,jsx}\"",
+    "precommit": "lint-staged",
+    "serve": "serve -s build",
+    "start": "run-p start-react",
+    "start-react": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --no-editorconfig --write --single-quote --print-width=120 --tab-width=2 \"src/**/*.{js,jsx}\"",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.11.1",
+    "prop-types": "^15.6.1",
+    "rimraf": "^2.6.2",
+    "serve": "^6.5.3"
+  }
+}
